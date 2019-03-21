@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.container {
+			/*display: none;*/
+		}
+		html {
+			overflow-x: hidden;
+		}
+
+		img.image {
+			position: absolute;
+			width: 100%;
+
+		}
+		#header1 {
+			position: absolute;
+			left:10%;
+			width: 300px;
+			height: 450px;
+			background-color: grey;
+		}
+		#header2 {
+			position: absolute;
+			left:10%;
+			width: 300px;
+			height: 450px;
+			background-color: brown;
+		}
+		.name {
+			position: absolute;
+			width: 250px;
+			left: 11.5%;
+		}
+		.secondTitle {
+			position: absolute;
+			width: 100%;
+		}
+		.firstTitle {
+			position: absolute;
+			width: 100%;
+		}
+		.hided {
+			display: none;
+		}
+		button	{
+			margin-top: 800px;
+		}
+		.content {
+			position: absolute;
+			display: grid;
+			grid-template-columns: 40% 60%
+		}
+		#moreCiri {
+			display: none;
+			margin-top: 100px;
+			margin-left: 100px;
+			height: 550px;
+		}
+		.info {
+			display: inline-block;
+			margin-top: 100px;
+			margin-right: 100px;
+		}
+		h1 {
+			display: none;
+			text-align: center;
+		}
+		#show {
+			display: none;
+		}
+		.info p {
+			display: none;
+		}
+
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function() {
+			var count = 0;
+			$('button:eq(0)').click(function() {
+				console.log(count)
+				if (count % 2 === 0) {
+					$('.image:eq(0)').hide('slide', {direction:'left'}, 2000);
+					$('.image:eq(1)').show('slide', {direction:'right'}, 2000);
+					$('#header1').slideUp(1000, function() {
+						$('#header2').slideDown(1000);
+					});
+					$('.secondTitle:eq(0)').hide('slide', {direction:'left'}, 1800);
+					$('.secondTitle:eq(1)').show('slide', {direction:'right'}, 2100);
+					$('.firstTitle:eq(0)').hide('slide', {direction:'left'}, 2150);
+					$('.firstTitle:eq(1)').show('slide', {direction:'right'}, 1900);
+					$('#show').css('display', 'inline-block');
+				} else {
+					$('.image:eq(0)').show('slide', {direction:'left'}, 2000);
+					$('.image:eq(1)').hide('slide', {direction:'right'}, 2000);
+					$('#header2').slideUp(1000, function() {
+						$('#header1').slideDown(1000);
+					});
+					$('.secondTitle:eq(0)').show('slide', {direction:'left'}, 2100);
+					$('.secondTitle:eq(1)').hide('slide', {direction:'right'}, 2300);
+					$('.firstTitle:eq(0)').show('slide', {direction:'left'}, 1950);
+					$('.firstTitle:eq(1)').hide('slide', {direction:'right'}, 1900);
+					$('button:eq(1)').css('display', 'none');
+				};
+				count++;
+			});
+			$('button:eq(1)').click(function() {
+				$('.name').slideUp(1000);
+				$('.image:eq(1)').hide('slide', {direction:'down'}, 1000);
+				$('#header2').slideUp(1000, function() {
+					$('#header1').hide('slide', {direction:'up'}, 1000);
+				});
+				$('.secondTitle:eq(1)').hide('slide', {direction:'down'}, 900);
+				$('.firstTitle:eq(1)').hide('slide', {direction:'down'}, 1300, function() {
+					$('#moreCiri').show('slide',{direction:'left'}, 1000 , function() {
+						$('h1').slideDown(1000, function() {
+							// $('p').slideDown(1000);
+						});
+						$('p').slideDown(1000);
+					});
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	
+	<div class="container">
+		<div id="geralt ">
+			<div id="header1"></div>
+			 <img class="name" src="witcher-name.png"> 
+			<img class="secondTitle" src="monster-killer.png">
+			<img class="image" src="geralt-img.png">
+			<img class="firstTitle"src="geralt-of-rivia.png">
+		</div>
+		<div id="ciri ">
+			<div id="header2" class="hided"></div>
+			 <img class="name hided" src="witcher-name.png"> 
+			<img class="secondTitle hided" src="princess.png">
+			<img class="image hided" src="ciri-img.png">
+			<img class="firstTitle hided"src="cirilla.png">
+		</div>
+		<img class="name" src="witcher-name.png">
+		
+	</div>
+
+	<div class="content">
+		<img id="moreCiri" src="more-cirilla.png">
+		<div class="info">
+			<h1>Cirilla</h1>
+			<br>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+		</div>
+	</div>
+	<button>Change</button>
+	<button id="show">Show info</button>
+</body>
+</html>
